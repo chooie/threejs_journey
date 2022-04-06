@@ -1,0 +1,24 @@
+{
+  "cSpell.ignoreWords": ["CLOUDINARY", "apos", "avif", "juncha", "webp"],
+  "cSpell.words": [
+    "clsx",
+    "gsap",
+    "interactor",
+    "lightbox",
+    "prefetch",
+    "pushable",
+    "rehype",
+    "stackoverflow",
+    "woocommerce"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  "editor.codeActionsOnSave": ["source.fixAll.format"],
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "files.trimTrailingWhitespace": true,
+  // Disable Vim by default for each file
+  "vim.disableExtension": true
+}
