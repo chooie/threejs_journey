@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 /*
  * Cursor
@@ -47,10 +48,11 @@ const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 100);
 //   0.1,
 //   100
 // );
-// camera.position.x = 2;
-// camera.position.y = 2;
+camera.position.x = 0;
+camera.position.y = 0;
 camera.position.z = 3;
-camera.lookAt(mesh.position);
+// camera.lookAt(mesh.position);
+
 scene.add(camera);
 
 // Renderer
@@ -59,8 +61,13 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+// controls.target.y = 1;
+// controls.update();
+
 // Animate
-const clock = new THREE.Clock();
+// const clock = new THREE.Clock();
 
 const tick = () => {
   //   const elapsedTime = clock.getElapsedTime();
@@ -68,10 +75,15 @@ const tick = () => {
   // Update objects
   //   mesh.rotation.y = elapsedTime;
 
-  camera.position.x = 3 * Math.sin(cursor.x * 2 * Math.PI);
-  camera.position.z = 3 * Math.cos(cursor.x * 2 * Math.PI);
-  camera.position.y = cursor.y * 5;
-  camera.lookAt(mesh.position);
+  // camera.position.x = 3 * Math.sin(cursor.x * 2 * Math.PI);
+  // camera.position.z = 3 * Math.cos(cursor.x * 2 * Math.PI);
+  // camera.position.y = cursor.y * 5;
+  // camera.lookAt(mesh.position);
+
+  // required if controls.enableDamping or controls.autoRotate are set to true
+  // controls.update();
+
+  controls.update();
 
   // Render
   renderer.render(scene, camera);
