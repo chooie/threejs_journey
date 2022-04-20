@@ -5,6 +5,7 @@
     "gsap",
     "interactor",
     "lightbox",
+    "metalness",
     "prefetch",
     "pushable",
     "rehype",
